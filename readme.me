@@ -1,0 +1,10 @@
+code for https://nsl.cz/using-tun-tap-in-go-or-how-to-write-vpn/
+
+go mod tidy
+go build tun.go
+
+To run it just exec on one host something like this:
+./tun -local 10.168.2.11/24 -remote {remote ipv4}
+
+and on the second:
+./tun -local 10.168.2.9/24 -remote {remote ipv4}
