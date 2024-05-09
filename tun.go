@@ -59,7 +59,12 @@ func main() {
         log.Fatalln("\nremote server is not specified")
     }
     // create TUN interface
-    iface, err := water.NewTUN("")
+    // iface, err := water.NewTUN("")
+
+    iface, err := water.New(water.Config{
+      DeviceType: water.TUN,
+      })
+
     if nil != err {
         log.Fatalln("Unable to allocate TUN interface:", err)
     }
